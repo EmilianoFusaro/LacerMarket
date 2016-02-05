@@ -10,7 +10,12 @@
 <body>
 
 <%= render "layouts/header" %>
-<%= yield %>
+
+<main>  <!-- messo per css footer fisso in basso-->
+  <%= yield %>
+</main>
+
+<%= render "layouts/footer" %>
 
 </body>
 
