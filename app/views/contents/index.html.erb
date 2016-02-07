@@ -1,7 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Contents</h1>
+<!--<h1>Listing Contents</h1>-->
+<div class="row">
+<% @contents.each do |content| %>
+  <div class="col s3">
+    <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <%= image_tag content.cover.url ,class: "activator" %>        
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4"><%= content.titolo %><i class="material-icons right">more_vert</i></span>
+          <div>
+            <span>Venduto da <%= content.user.name  if content.user %></span>
+            <span class="right"><%= number_to_currency(content.price) %></span>
+          </div>        
+            <br>
+            <div class="center"><%= link_to 'Scopri di più', content ,class:"btn" %></div>
+            <br>
+            <% if content.user == current_user %>
+            <br>
+            <div class="center"><p>                                      
+            <%= link_to 'Edit', edit_content_path(content) %>
+            <%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Sei Sicuro?' } %>            
+            </p></div>
+           <% end %>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><%= content.titolo %><i class="material-icons right">close</i></span>
+          <p><%= content.descrizione %></p>
+        </div>
+      </div>
+  </div>
+<% end %>
+</div>
 
+
+<!--
 <table>
   <thead>
     <tr>
@@ -15,24 +49,23 @@
   </thead>
 
   <tbody>
-    <% @contents.each do |content| %>
+    <%# @contents.each do |content| %>
       <tr>
-        <td><%= image_tag content.cover.url(:thumb) %></td>
-        <td><%= content.titolo %></td>
-        <td><%= content.descrizione %></td>
-        <td><%= content.user.name  if content.user %></td>
-        <td><%= content.price %></td>
-        <td><%= link_to 'mostra', content %></td>
-        <!-- link_to 'mostra', content_path(content) (stessa cosa di sopra)-->
-        <% if content.user == current_user %>
-        <td><%= link_to 'Edit', edit_content_path(content) %></td>
-        <td><%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Sei Sicuro?' } %></td>
-        <% end %>
+        <td><%#= image_tag content.cover.url(:thumb) %></td>
+        <td><%#= content.titolo %></td>
+        <td><%#= content.descrizione %></td>
+        <td><%#= content.user.name  if content.user %></td>
+        <td><%#= content.price %></td>
+        <td><%#= link_to 'mostra', content %></td>
+        #link_to 'mostra', content_path(content) (stessa cosa di sopra)
+        <%# if content.user == current_user %>
+        <td><%#= link_to 'Edit', edit_content_path(content) %></td>
+        <td><%#= link_to 'Destroy', content, method: :delete, data: { confirm: 'Sei Sicuro?' } %></td>
+        <%# end %>
       </tr>
-    <% end %>
+    <%# end %>
   </tbody>
 </table>
-
 <br>
-
-<%= link_to 'New Content', new_content_path %>
+<%#= link_to 'New Content', new_content_path %>
+-->
