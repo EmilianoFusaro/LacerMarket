@@ -5,5 +5,12 @@ class Content < ActiveRecord::Base
     #validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
     # è stato tolto il default dell'immagine
     has_attached_file :cover, styles: { medium: "300x>", thumb: "100x>" }
-    validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
+    validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/,
+    message:"formato non supportato"
+
+    #gestione allegato
+    has_attached_file :allegato
+    validates_attachment_content_type :allegato, content_type: [/^image\/(png|gif|jpeg)/,'application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document','application/mspowerpoint','application/vnd.ms-powepoint'],
+    message:"formato non supportato"
+
 end
