@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #x il layout css
 gem 'materialize-sass'
 gem 'devise'
+gem "paperclip", "~> 4.3"
 
 
 # Use ActiveModel has_secure_password
