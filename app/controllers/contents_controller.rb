@@ -6,7 +6,9 @@ class ContentsController < ApplicationController
   # GET /contents
   # GET /contents.json
   def index
-    @contents = Content.all
+    #@contents = Content.all.order("Created_at DESC")
+    #@contents = Content.all.order("Created_at DESC").limit(2)
+    @contents = Content.all.order("Created_at DESC").paginate(:page => params[:page], :per_page => 4)  #usa la gemma e limita il numero per pagina
   end
 
   # GET /contents/1
