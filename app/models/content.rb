@@ -13,4 +13,12 @@ class Content < ActiveRecord::Base
     validates_attachment_content_type :allegato, content_type: [/^image\/(png|gif|jpeg)/,'application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document','application/mspowerpoint','application/vnd.ms-powepoint'],
     message:"formato non supportato"
 
+
+    validates :titolo, :descrizione, :price, presence: true
+    validates :price, numericality: {greater_than: 0 }
+
+    validates :cover, attachment_presence: true
+    validates :allegato, attachment_presence: true
+
+
 end
