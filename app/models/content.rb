@@ -5,6 +5,9 @@ class Content < ActiveRecord::Base
 
 
 	belongs_to :user
+
+    has_many :sales
+
     #cover può cambiare come nome
 	#has_attached_file :cover, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
     #validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
@@ -20,7 +23,7 @@ class Content < ActiveRecord::Base
 
 
     validates :titolo, :descrizione, :price, presence: true
-    validates :price, numericality: {greater_than: 0 }
+    validates :price, numericality: {greater_than: 49 }
 
     validates :cover, attachment_presence: true
     validates :allegato, attachment_presence: true
