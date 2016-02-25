@@ -1,4 +1,9 @@
 class Content < ActiveRecord::Base
+
+    extend FriendlyId   #per usare la gemma link
+    friendly_id :titolo, use: :slugged
+
+
 	belongs_to :user
     #cover può cambiare come nome
 	#has_attached_file :cover, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
