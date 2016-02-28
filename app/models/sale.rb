@@ -6,6 +6,6 @@ class Sale < ActiveRecord::Base
 
 	private
 	  def generate_guid
-	  	def.guid = SecyreRandom.uuid()
+	  	self.guid = SecureRandom.uuid()
 	  end
 end

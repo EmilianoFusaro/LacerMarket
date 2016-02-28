@@ -3,7 +3,6 @@ class Content < ActiveRecord::Base
     extend FriendlyId   #per usare la gemma link
     friendly_id :titolo, use: :slugged
 
-
 	belongs_to :user
 
     has_many :sales
@@ -21,12 +20,10 @@ class Content < ActiveRecord::Base
     validates_attachment_content_type :allegato, content_type: [/^image\/(png|gif|jpeg)/,'application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document','application/mspowerpoint','application/vnd.ms-powepoint'],
     message:"formato non supportato"
 
-
     validates :titolo, :descrizione, :price, presence: true
     validates :price, numericality: {greater_than: 49 }
 
     validates :cover, attachment_presence: true
     validates :allegato, attachment_presence: true
-
 
 end
