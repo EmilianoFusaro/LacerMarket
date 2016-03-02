@@ -10,8 +10,17 @@
 <body>
 
 <%= render "layouts/header" %>
- <p class="notice"><%= notice %></p>
- <p class="alert"><%= alert %></p>
+ 
+<!-- <p class="notice"><%#= notice %></p> -->
+<!-- <p class="alert"><%#= alert %></p> -->
+<div class="container">
+	<%flash.each do |type,message| %>
+	<script>
+		 Materialize.toast('<%= message %>', 4000)
+	</script>
+	<% end %>
+</div>
+
 <main class="container">  <!-- messo per css footer fisso in basso-->
   <%= yield %>
 </main>
