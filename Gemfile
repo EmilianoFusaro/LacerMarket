@@ -34,6 +34,10 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'stripe'
 gem 'aasm'
 
+gem 'font-awesome-sass' #per includere altre icone
+
+#gem 'aws-sdk' #x amazon  
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

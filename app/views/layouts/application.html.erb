@@ -6,6 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>  <!-- aggiunto da google font -->
 </head>
 <body>
 
@@ -21,6 +22,9 @@
 	<% end %>
 </div>
 
+<%= render 'pages/slider' if action_name == 'home'%>
+
+
 <main class="container">  <!-- messo per css footer fisso in basso-->
   <%= yield %>
 </main>
@@ -34,3 +38,10 @@
 </script>
 
 </html>
+
+<script>
+ // ripetuto perchè solo in asset non funzionava  
+ $(document).ready(function(){
+      $('.parallax').parallax();
+ });
+</script>
