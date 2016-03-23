@@ -3,7 +3,8 @@
 <!--<h1>Listing Contents</h1>-->
 <div class="row">
 <% @contents.each do |content| %>
-  <div class="col s3">
+  <!-- s12 x mobile m6 per tablet l4 per pc -->
+  <div class="col s12 m6 l3">
     <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
           <%= image_tag content.cover.url ,class: "activator" %>        

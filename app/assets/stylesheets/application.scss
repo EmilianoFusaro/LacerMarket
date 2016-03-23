@@ -56,5 +56,15 @@
 }
 
 .fa-social {
-  padding: 0 10px; //0 in alto e in basso 2o sx e dx
+  /*padding: 0 10px; //0 in alto e in basso 2o sx e dx*/
+  padding: 0 10px;
+}
+
+
+/* se lavoro su uno schermo di 600px  */
+@media (max-width: 600px) {
+.fa-social {
+  /*padding: 0 10px; //0 in alto e in basso 2o sx e dx*/
+  padding: 0 10%;
+}
 }
