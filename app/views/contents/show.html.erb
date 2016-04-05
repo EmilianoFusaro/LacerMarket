@@ -1,5 +1,6 @@
 <!-- <p id="notice"><%#= notice %></p> -->
 
+<div class="contet-show">
 <div class="row">
 	<div class="col l6">
       <%= image_tag @content.cover.url, class: "responsive-img show-img" %>		
@@ -31,11 +32,9 @@
     <%= link_to "Registrati" , new_user_registration_path %> 
     per acquistare questo contenuto
     </p>
-
 <%end%>
-
 </div>
-
+</div>
 
 <!-- Form Originale x Integrazione Con Stripe -->
 <!-- <form action="" method="POST"> -->
